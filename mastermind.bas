@@ -1,0 +1,89 @@
+1 Prt"MASTERMIND"
+2 Prt"ENTER A FOURDIGIT NUMBERDIGITS 1-6"
+3 Prt"O=MATCH     .=DIGIT IN"
+4 Prt"WRONG SPOT  1=CONTINUE"
+5 InpP
+6 LetL=9999
+7 LetA=Rnd[5],A=A+1
+8 LetB=Rnd[5],B=B+1
+9 LetC=Rnd[5],C=C+1
+10 LetD=Rnd[5],D=D+1,N=1
+11 LetI=0,J=0
+12 Prt"GUESS",N
+13 InpM
+14 LetE=M/1000,E=Int[E],M=M-[E*1000],F=M/100,F=Int[F]
+15 LetM=M-[F*100],G=M/10,G=Int[G],H=M-[G*10]
+16 IfE=AThenLetI=I+1,A=-A
+17 IfF=BThenLetI=I+1,B=-B
+18 IfG=CThenLetI=I+1,C=-C
+19 IfH=DThenLetI=I+1,D=-D
+20 IfE=-AThenGoto30
+21 IfE=BThenGoto25
+22 IfE=CThenGoto27
+23 IfE=DThenGoto29
+24 Goto30
+25 LetB=-B,J=J+1
+26 Goto30
+27 LetC=-C,J=J+1
+28 Goto30
+29 LetD=-D,J=J+1
+30 IfF=-BThenGoto40
+31 IfF=AThenGoto35
+32 IfF=CThenGoto37
+33 IfF=DThenGoto39
+34 Goto40
+35 LetA=-A,J=J+1
+36 Goto40
+37 LetC=-C,J=J+1
+38 Goto40
+39 LetD=-D,J=J+1
+40 IfG=-CThenGoto50
+41 IfG=AThenGoto45
+42 IfG=BThenGoto47
+43 IfG=DThenGoto49
+44 Goto50
+45 LetA=-A,J=J+1
+46 Goto50
+47 LetB=-B,J=J+1
+48 Goto50
+49 LetD=-D,J=J+1
+50 IfH=-DThenGoto60
+51 IfH=AThenGoto55
+52 IfH=BThenGoto57
+53 IfH=CThenGoto59
+54 Goto60
+55 LetA=-A,J=J+1
+56 Goto60
+57 LetB=-B,J=J+1
+58 Goto60
+59 LetC=-C,J=J+1
+60 IfA<0ThenLetA=-A
+61 IfB<0ThenLetB=-B
+62 IfC<0ThenLetC=-C
+63 IfD<0ThenLetD=-D
+64 IfI=0ThenGoto68
+65 ForK=1ToI
+66 Prt"O"
+67 NextK
+68 IfJ=0ThenGoto72
+69 ForK=1ToJ
+70 Prt"."
+71 NextK
+72 IfI=4ThenGoto75
+73 LetN=N+1
+74 Goto11
+75 Prt"YOU WIN"
+76 IfN<LThenGoto82
+77 Prt"BEST SCORE"
+78 PrtL
+79 Prt"BY"
+80 PrtQ$
+81 Goto84
+82 Inp"NAME",Q$
+83 LetL=N
+84 Prt"PLAY AGAIN"
+85 Prt"1 FOR YES"
+86 Prt"2 FOR NO"
+87 InpM
+88 IfM=1ThenGoto7
+89 Prt"BYE"
